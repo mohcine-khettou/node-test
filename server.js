@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-const router = express.Router();
+require("dotenv").config();
 const insuranceRouter = require("./insurance-route");
 app.use("/", insuranceRouter);
 
-app.listen(3000, () => {
-  console.log("app is listening on port 3000");
+const port = process.env.port || 5000;
+app.listen(port, () => {
+  console.log("app is listening on port 5000");
 });
