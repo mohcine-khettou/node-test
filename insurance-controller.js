@@ -7,7 +7,7 @@ const getAllInsurances = async (req, res) => {
     "utf-8"
   );
   const data = JSON.parse(insurancesJson);
-  res.status(200).json(data.slice(0, 10));
+  res.status(200).json(data);
 };
 const getSingleInsurance = async (req, res) => {
   const insurancesJson = await fs.readFile(
